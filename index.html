@@ -12,6 +12,8 @@
     <link rel="stylesheet" href="dist/output.css" />
     <!-- icon -->
     <script src="https://kit.fontawesome.com/dcda072f7b.js"></script>
+    <!-- swiper -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
   </head>
   <body class="font-roboto bg-background">
     <!-- navbar -->
@@ -89,7 +91,7 @@
     <!-- akhir navbar -->
 
     <!-- home -->
-    <section id="home" class="md:py-14 flex justify-center">
+    <section id="home" class="py-16 flex justify-center">
       <div class="container flex justify-center">
         <div class="flex flex-wrap justify-center items-center px-5 py-8 md:flex-row-reverse">
           <div class="flex justify-center my-5 w-full md:w-1/2 md:justify-start lg:pl-5">
@@ -104,7 +106,7 @@
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero nam quisquam id assumenda ex, minus sequi quae aliquam, ipsum quos dicta? Animi, vero. Non id quos perferendis nam sit repellat.
             </p>
             <div class="flex justify-center gap-2 my-4 md:justify-end">
-              <a class="w-[40px] h-[40px] border-2 border-primary rounded-full flex justify-center hover:bg-primary hover:shadow-spread group" href=""
+              <a data-tooltip-target="tooltip-home-linkedin" class="w-[40px] h-[40px] border-2 border-primary rounded-full flex justify-center hover:bg-primary hover:shadow-spread group" href=""
                 ><svg class="w-[17px]" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
                   <path
                     class="group-hover:fill-white"
@@ -113,7 +115,15 @@
                   />
                 </svg>
               </a>
-              <a class="w-[40px] h-[40px] border-2 border-primary rounded-full flex justify-center hover:bg-primary hover:shadow-spread group" href=""
+              <div
+                id="tooltip-home-linkedin"
+                role="tooltip"
+                class="absolute z-10 invisible inline-block px-3 py-2 text-sm font-medium text-white transition-opacity duration-300 bg-gray-900 rounded-lg shadow-sm opacity-0 tooltip dark:bg-gray-700"
+              >
+                Linkedin
+                <div class="tooltip-arrow" data-popper-arrow></div>
+              </div>
+              <a data-tooltip-target="tooltip-home-github" class="w-[40px] h-[40px] border-2 border-primary rounded-full flex justify-center hover:bg-primary hover:shadow-spread group" href=""
                 ><svg class="w-[17px]" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
                   <path
                     class="group-hover:fill-white"
@@ -122,7 +132,15 @@
                   />
                 </svg>
               </a>
-              <a class="w-[40px] h-[40px] border-2 border-primary rounded-full flex justify-center hover:bg-primary hover:shadow-spread group" href=""
+              <div
+                id="tooltip-home-github"
+                role="tooltip"
+                class="absolute z-10 invisible inline-block px-3 py-2 text-sm font-medium text-white transition-opacity duration-300 bg-gray-900 rounded-lg shadow-sm opacity-0 tooltip dark:bg-gray-700"
+              >
+                Github
+                <div class="tooltip-arrow" data-popper-arrow></div>
+              </div>
+              <a data-tooltip-target="tooltip-home-ig" class="w-[40px] h-[40px] border-2 border-primary rounded-full flex justify-center hover:bg-primary hover:shadow-spread group" href=""
                 ><svg class="w-[17px]" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
                   <path
                     class="group-hover:fill-white"
@@ -131,6 +149,14 @@
                   />
                 </svg>
               </a>
+              <div
+                id="tooltip-home-ig"
+                role="tooltip"
+                class="absolute z-10 invisible inline-block px-3 py-2 text-sm font-medium text-white transition-opacity duration-300 bg-gray-900 rounded-lg shadow-sm opacity-0 tooltip dark:bg-gray-700"
+              >
+                Instagram
+                <div class="tooltip-arrow" data-popper-arrow></div>
+              </div>
             </div>
             <div class="flex justify-center py-2 md:justify-end">
               <a class="inline-flex justify-center items-center bg-primary font-semibold w-28 h-10 rounded-full shadow-spread hover:shadow-spreadBold hover:scale-105" href="">Hire Me</a>
@@ -142,9 +168,11 @@
     <!-- akhir home -->
 
     <!-- about me -->
-    <section id="about" class="py-16 md:py-14">
+    <section id="about" class="py-16 md:py-16">
       <div class="container mx-auto">
-        <h1 class="font-montserat my-2 text-5xl font-extrabold tracking-wider text-white text-center drop-shadow-lg">About <span class="bg-gradient-to-r from-primary via-primary to-[#fff200] bg-clip-text text-transparent">Me</span></h1>
+        <h1 class="font-montserat my-2 lg:text-5xl text-4xl px-5 font-extrabold tracking-wider text-white text-center drop-shadow-lg">
+          About <span class="bg-gradient-to-r from-primary via-primary to-[#fff200] bg-clip-text text-transparent">Me</span>
+        </h1>
         <div class="flex flex-wrap justify-center px-5">
           <div class="my-3 px-5 md:w-1/2 md:pl-10">
             <h1 class="font-montserat text-2xl font-extrabold tracking-wider text-center drop-shadow-lg bg-gradient-to-r from-primary via-primary to-[#fff200] bg-clip-text text-transparent">Yudi Pratama Putra</h1>
@@ -357,8 +385,627 @@
     </section>
     <!-- akhir about me -->
 
-    <!--  -->
+    <!-- projects -->
+    <section id="project" class="max-w-full py-16">
+      <div class="container mx-auto">
+        <h1 class="font-montserat mb-7 lg:text-5xl text-4xl px-5 font-extrabold tracking-wider text-white text-center drop-shadow-lg">
+          Projects <span class="bg-gradient-to-r from-primary via-primary to-[#fff200] bg-clip-text text-transparent">Experience</span>
+        </h1>
+        <div class="flex flex-wrap gap-8 md:gap-5 justify-center">
+          <!-- item 1 -->
+          <div class="max-w-72 bg-background border-[3px] border-primary rounded-lg">
+            <div class="max-w-52 w-full mx-auto my-4">
+              <img class="rounded-xl object-contain" src="./asset/projects/hand-robot.png" alt="hand-robot" />
+            </div>
+            <div class="px-5 md:h-[200px] mb-3">
+              <h5 class="text-white text-center mb-3 text-2xl md:text-xl font-extrabold tracking-tight">Gesture-Controlled Robot</h5>
+              <p class="text-sm text-white text-justify">
+                Robotic hand powered by Arduino controls fingers with servo-thread mechanism, integrating OpenCV and Mediapipe for real-time hand tracking. Enables seamless interaction between user and robot for precise, innovative
+                movements.
+              </p>
+            </div>
+            <div class="px-5 pb-5 md:pb-0 flex gap-2">
+              <!-- github -->
+              <a
+                data-tooltip-target="tooltip-projects1-github"
+                class="w-[40px] h-[40px] border-2 border-primary rounded-full flex justify-center items-center hover:bg-primary hover:shadow-spread group"
+                href="https://github.com/Yud1Pp/robot-controling-with-hand.git"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <i class="fa-brands fa-github text-primary text-[17px] group-hover:text-white"></i>
+              </a>
+              <!-- tooltip -->
+              <div
+                id="tooltip-projects1-github"
+                role="tooltip"
+                class="absolute z-10 invisible inline-block px-3 py-2 text-sm font-medium text-white transition-opacity duration-300 bg-gray-900 rounded-lg shadow-sm opacity-0 tooltip dark:bg-gray-700"
+              >
+                Github
+                <div class="tooltip-arrow" data-popper-arrow></div>
+              </div>
+              <!-- yt -->
+              <a
+                data-tooltip-target="tooltip-projects1-youtube"
+                class="w-[40px] h-[40px] border-2 border-primary rounded-full flex justify-center items-center hover:bg-primary hover:shadow-spread group"
+                href="https://youtube.com/shorts/X0DXmyAUjNU?feature=share"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <i class="fa-brands fa-youtube text-primary text-[17px] group-hover:text-white"></i>
+              </a>
+              <!-- tooltip -->
+              <div
+                id="tooltip-projects1-youtube"
+                role="tooltip"
+                class="absolute z-10 invisible inline-block px-3 py-2 text-sm font-medium text-white transition-opacity duration-300 bg-gray-900 rounded-lg shadow-sm opacity-0 tooltip dark:bg-gray-700"
+              >
+                Youtube
+                <div class="tooltip-arrow" data-popper-arrow></div>
+              </div>
+            </div>
+          </div>
+          <!-- item 2 -->
+          <div class="max-w-72 bg-background border-[3px] border-primary rounded-lg">
+            <div class="max-w-52 w-full mx-auto my-4">
+              <img class="rounded-xl object-contain" src="./asset/projects/melanoma.png" alt="melanoma" />
+            </div>
+            <div class="px-5 mb-3 h-[200px]">
+              <h5 class="text-white text-center mb-3 text-2xl md:text-xl font-extrabold tracking-tight">Melanoma Detection</h5>
+              <p class="text-sm text-white text-justify">
+                This app detects and analyzes melanoma types using image processing and machine learning. It extracts image data to train ML models for accurate detection, featuring segmentation, edge detection, asymmetry, and color
+                analysis.
+              </p>
+            </div>
+            <div class="px-5 pb-5 flex gap-2">
+              <!-- github -->
+              <a
+                data-tooltip-target="tooltip-projects2-github"
+                class="w-[40px] h-[40px] border-2 border-primary rounded-full flex justify-center items-center hover:bg-primary hover:shadow-spread group"
+                href="https://github.com/Yud1Pp/Melanoma-Detection.git"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <i class="fa-brands fa-github text-primary text-[17px] group-hover:text-white"></i>
+              </a>
+              <!-- tooltip -->
+              <div
+                id="tooltip-projects2-github"
+                role="tooltip"
+                class="absolute z-10 invisible inline-block px-3 py-2 text-sm font-medium text-white transition-opacity duration-300 bg-gray-900 rounded-lg shadow-sm opacity-0 tooltip dark:bg-gray-700"
+              >
+                Github
+                <div class="tooltip-arrow" data-popper-arrow></div>
+              </div>
+              <!-- link -->
+              <a
+                data-tooltip-target="tooltip-projects2-link"
+                class="w-[40px] h-[40px] border-2 border-primary rounded-full flex justify-center items-center hover:bg-primary hover:shadow-spread group"
+                href="https://skin-melanoma-detection.streamlit.app/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <i class="fa-solid fa-arrow-up-right-from-square text-primary text-[17px] group-hover:text-white"></i>
+              </a>
+              <!-- tooltip -->
+              <div
+                id="tooltip-projects2-link"
+                role="tooltip"
+                class="absolute z-10 invisible inline-block px-3 py-2 text-sm font-medium text-white transition-opacity duration-300 bg-gray-900 rounded-lg shadow-sm opacity-0 tooltip dark:bg-gray-700"
+              >
+                Chek the App
+                <div class="tooltip-arrow" data-popper-arrow></div>
+              </div>
+            </div>
+          </div>
+          <!-- item 3 -->
+          <div class="max-w-72 bg-background border-[3px] border-primary rounded-lg">
+            <div class="max-w-52 w-full mx-auto my-4">
+              <img class="rounded-xl object-contain" src="./asset/projects/emotion-classify.png" alt="emotion" />
+            </div>
+            <div class="px-5 mb-3 h-[200px]">
+              <h5 class="text-white text-center mb-3 text-2xl md:text-xl font-extrabold tracking-tight">Emotion Classification</h5>
+              <p class="text-sm text-white text-justify">
+                Using the FastJobs/ Visual Emotional Analysis dataset, where most models achieve under 60% accuracy, this fine-tuned Google-ViT surpasses expectations with a 63.75% accuracy and 1.0965 loss, showcasing effective fine-tuning
+                and dataset optimization.
+              </p>
+            </div>
+            <div class="px-5 pb-5 flex gap-2">
+              <!-- hf -->
+              <a
+                data-tooltip-target="tooltip-projects3-hf"
+                class="w-[40px] h-[40px] border-2 border-primary rounded-full flex justify-center items-center hover:bg-primary hover:shadow-spread group"
+                href="https://huggingface.co/Yudsky/image_classification"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <svg class="w-[20px] fill-primary group-hover:fill-white" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+                  <g>
+                    <path
+                      d="M3 15.999c0-3.67 1.106-6.91 3.235-9.221C8.35 4.48 11.568 3 15.999 3c4.43 0 7.648 1.48 9.764 3.778c2.129 2.311 3.235 5.55 3.235 9.22c0 .421-.015.836-.044 1.244c.33.179.602.447.787.772c.418.05.796.23 1.094.497c.109-.82.163-1.66.163-2.512c0-4.061-1.227-7.821-3.764-10.576C24.684 2.654 20.903 1 16 1C11.095 1 7.313 2.654 4.763 5.423C2.226 8.178 1 11.938 1 15.999c0 .853.054 1.693.163 2.513a1.993 1.993 0 0 1 1.096-.498a2.01 2.01 0 0 1 .784-.77A17.619 17.619 0 0 1 3 15.998Zm9.668 12.687a4.77 4.77 0 0 1-1.861 1.597c1.557.466 3.29.715 5.192.715c1.902 0 3.635-.25 5.194-.716a4.77 4.77 0 0 1-1.861-1.596a17.07 17.07 0 0 1-3.333.312c-1.198 0-2.308-.108-3.331-.312Z"
+                    />
+                    <path
+                      d="M7.888 13.338a2 2 0 0 0-.775 2.325a2 2 0 1 1 .775-2.325Zm17 2.324a2 2 0 0 0-.776-2.324a2 2 0 1 1 .776 2.325ZM9.349 9.413c-.21.228-.32.53-.367.778a1 1 0 0 1-1.964-.382c.089-.456.31-1.153.858-1.749C8.453 7.431 9.316 7 10.5 7c1.195 0 2.062.452 2.636 1.082c.544.597.77 1.292.85 1.747a1 1 0 0 1-1.971.342a1.546 1.546 0 0 0-.358-.742C11.47 9.222 11.142 9 10.5 9c-.653 0-.972.217-1.151.413Zm11.001 0c-.21.228-.32.53-.368.778a1 1 0 0 1-1.963-.382c.088-.456.31-1.153.857-1.749C19.453 7.431 20.316 7 21.5 7c1.196 0 2.062.452 2.636 1.082c.544.597.77 1.292.85 1.747a1 1 0 0 1-1.971.342a1.545 1.545 0 0 0-.358-.742C22.47 9.222 22.142 9 21.5 9c-.653 0-.971.217-1.15.413ZM8.4 14.2a1 1 0 0 1 1.4.2c.298.397 1.992 2.1 6.2 2.1s5.902-1.703 6.2-2.1a1 1 0 1 1 1.6 1.2c-.702.936-3.008 2.9-7.8 2.9s-7.098-1.964-7.8-2.9a1 1 0 0 1 .2-1.4Zm20.59 4.94a1 1 0 0 0-1.649-.892L23.58 21.54l-.079-.04c0-.413.038-.788.072-1.125c.09-.888.153-1.513-.572-1.875c-1.338-.669-1.952 1.564-2.363 3.743c-.094.496-.32.955-.572 1.392c-1.33 2.303-.066 4.614.935 5.365c1.789 1.342 3.5 1 5 0c.908-.605 2.635-1.82 3.927-2.737a1.116 1.116 0 0 0-1.146-1.904l-.126.064l1.985-1.655a1 1 0 0 0-.782-1.758l.293-.25a1 1 0 0 0-1.16-1.62Zm-25.98 0a1 1 0 0 1 1.649-.892l3.763 3.292l.079-.04c0-.413-.038-.788-.072-1.125c-.09-.888-.153-1.513.572-1.875c1.338-.669 1.952 1.564 2.363 3.743c.094.496.32.955.572 1.392c1.33 2.303.066 4.614-.935 5.365c-1.79 1.342-3.5 1-5 0c-.908-.605-2.635-1.82-3.927-2.737A1.116 1.116 0 0 1 3.22 24.36l.126.064l-1.985-1.655a1 1 0 0 1 .781-1.758l-.292-.25a1 1 0 0 1 1.16-1.62Z"
+                    />
+                  </g>
+                </svg>
+              </a>
+              <!-- tooltip -->
+              <div
+                id="tooltip-projects3-hf"
+                role="tooltip"
+                class="absolute z-10 invisible inline-block px-3 py-2 text-sm font-medium text-white transition-opacity duration-300 bg-gray-900 rounded-lg shadow-sm opacity-0 tooltip dark:bg-gray-700"
+              >
+                Huggingface
+                <div class="tooltip-arrow" data-popper-arrow></div>
+              </div>
+              <!--  -->
+            </div>
+          </div>
+          <!-- item 4 -->
+          <div class="max-w-72 bg-background border-[3px] border-primary rounded-lg">
+            <div class="max-w-52 w-full mx-auto my-4">
+              <img class="rounded-xl object-contain" src="./asset/projects/pest-detection.png" alt="corn" />
+            </div>
+            <div class="px-5 mb-3 h-[200px]">
+              <h5 class="text-white text-center mb-3 text-2xl md:text-xl font-extrabold tracking-tight">Maize Pest Detection</h5>
+              <p class="text-sm text-white text-justify">
+                This YOLOv11-based model detects maize pests using a filtered IP102 dataset. Achieved mAP 84.3%, precision 87.6%, and recall 79.4%. It enhances sustainable farming by enabling real-time, targeted pest control and minimizing
+                pesticide use.
+              </p>
+            </div>
+            <div class="px-5 pb-5 flex gap-2">
+              <!-- hf -->
+              <a
+                data-tooltip-target="tooltip-projects4-hf"
+                class="w-[40px] h-[40px] border-2 border-primary rounded-full flex justify-center items-center hover:bg-primary hover:shadow-spread group"
+                href="https://huggingface.co/spaces/Yudsky/Maize-Pest-Detection"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <svg class="w-[20px] fill-primary group-hover:fill-white" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+                  <g>
+                    <path
+                      d="M3 15.999c0-3.67 1.106-6.91 3.235-9.221C8.35 4.48 11.568 3 15.999 3c4.43 0 7.648 1.48 9.764 3.778c2.129 2.311 3.235 5.55 3.235 9.22c0 .421-.015.836-.044 1.244c.33.179.602.447.787.772c.418.05.796.23 1.094.497c.109-.82.163-1.66.163-2.512c0-4.061-1.227-7.821-3.764-10.576C24.684 2.654 20.903 1 16 1C11.095 1 7.313 2.654 4.763 5.423C2.226 8.178 1 11.938 1 15.999c0 .853.054 1.693.163 2.513a1.993 1.993 0 0 1 1.096-.498a2.01 2.01 0 0 1 .784-.77A17.619 17.619 0 0 1 3 15.998Zm9.668 12.687a4.77 4.77 0 0 1-1.861 1.597c1.557.466 3.29.715 5.192.715c1.902 0 3.635-.25 5.194-.716a4.77 4.77 0 0 1-1.861-1.596a17.07 17.07 0 0 1-3.333.312c-1.198 0-2.308-.108-3.331-.312Z"
+                    />
+                    <path
+                      d="M7.888 13.338a2 2 0 0 0-.775 2.325a2 2 0 1 1 .775-2.325Zm17 2.324a2 2 0 0 0-.776-2.324a2 2 0 1 1 .776 2.325ZM9.349 9.413c-.21.228-.32.53-.367.778a1 1 0 0 1-1.964-.382c.089-.456.31-1.153.858-1.749C8.453 7.431 9.316 7 10.5 7c1.195 0 2.062.452 2.636 1.082c.544.597.77 1.292.85 1.747a1 1 0 0 1-1.971.342a1.546 1.546 0 0 0-.358-.742C11.47 9.222 11.142 9 10.5 9c-.653 0-.972.217-1.151.413Zm11.001 0c-.21.228-.32.53-.368.778a1 1 0 0 1-1.963-.382c.088-.456.31-1.153.857-1.749C19.453 7.431 20.316 7 21.5 7c1.196 0 2.062.452 2.636 1.082c.544.597.77 1.292.85 1.747a1 1 0 0 1-1.971.342a1.545 1.545 0 0 0-.358-.742C22.47 9.222 22.142 9 21.5 9c-.653 0-.971.217-1.15.413ZM8.4 14.2a1 1 0 0 1 1.4.2c.298.397 1.992 2.1 6.2 2.1s5.902-1.703 6.2-2.1a1 1 0 1 1 1.6 1.2c-.702.936-3.008 2.9-7.8 2.9s-7.098-1.964-7.8-2.9a1 1 0 0 1 .2-1.4Zm20.59 4.94a1 1 0 0 0-1.649-.892L23.58 21.54l-.079-.04c0-.413.038-.788.072-1.125c.09-.888.153-1.513-.572-1.875c-1.338-.669-1.952 1.564-2.363 3.743c-.094.496-.32.955-.572 1.392c-1.33 2.303-.066 4.614.935 5.365c1.789 1.342 3.5 1 5 0c.908-.605 2.635-1.82 3.927-2.737a1.116 1.116 0 0 0-1.146-1.904l-.126.064l1.985-1.655a1 1 0 0 0-.782-1.758l.293-.25a1 1 0 0 0-1.16-1.62Zm-25.98 0a1 1 0 0 1 1.649-.892l3.763 3.292l.079-.04c0-.413-.038-.788-.072-1.125c-.09-.888-.153-1.513.572-1.875c1.338-.669 1.952 1.564 2.363 3.743c.094.496.32.955.572 1.392c1.33 2.303.066 4.614-.935 5.365c-1.79 1.342-3.5 1-5 0c-.908-.605-2.635-1.82-3.927-2.737A1.116 1.116 0 0 1 3.22 24.36l.126.064l-1.985-1.655a1 1 0 0 1 .781-1.758l-.292-.25a1 1 0 0 1 1.16-1.62Z"
+                    />
+                  </g>
+                </svg>
+              </a>
+              <!-- tooltip -->
+              <div
+                id="tooltip-projects4-hf"
+                role="tooltip"
+                class="absolute z-10 invisible inline-block px-3 py-2 text-sm font-medium text-white transition-opacity duration-300 bg-gray-900 rounded-lg shadow-sm opacity-0 tooltip dark:bg-gray-700"
+              >
+                Huggingface
+                <div class="tooltip-arrow" data-popper-arrow></div>
+              </div>
+              <!-- roboflow -->
+              <a
+                data-tooltip-target="tooltip-projects4-roboflow"
+                class="w-[40px] h-[40px] border-2 border-primary rounded-full flex justify-center items-center hover:bg-primary hover:shadow-spread group"
+                href="https://universe.roboflow.com/yudi-pratama-putra-rwuep/corn-pest-detection-2/model/3"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <svg class="w-[17px] fill-primary group-hover:fill-white" xmlns="http://www.w3.org/2000/svg" width="128" height="128" viewBox="0 0 24 24">
+                  <path
+                    d="M12 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12a12 12 0 0 0 12-12A12 12 0 0 0 12 0m.512 3.6a9.6 9.6 0 0 1 2.594.39c1.764.52 3.511 1.747 3.823 3.68c.066.41.065.829.007 1.24c-.208 1.466-1.09 2.777-2.09 3.83c-1.063 1.122-2.417 1.854-3.54 2.898c-.657.611-.925 1.36-.132 1.995c1.084.553 1.986.266 2.97-.332c.582-.353 1.08-.823 1.511-1.345c.219-.264.422-.542.617-.825c.164-.24.317-.517.537-.716a.8.8 0 0 1 .502-.267a.69.69 0 0 1 .7.406c.118.28.013.64-.113.9c-.652 1.346-1.368 2.25-1.867 2.78c-1.486 1.653-3.809 2.736-5.955 1.846c-1.234-.51-2.198-1.658-2.37-2.998c-.32-2.502 2.588-3.95 4.12-5.368c.937-.868 1.965-2.203 1.486-3.562c-.459-1.302-1.988-1.868-3.246-2c-1.24-.128-2.5.128-3.624.654c-.882.412-1.625 1.038-2.32 1.711c-.23.223-.45.46-.688.673c-.206.184-.453.352-.732.39c-.417.056-.813-.248-.76-.688c.086-.712.592-1.332 1.036-1.862q.412-.493.884-.928a9.3 9.3 0 0 1 2.397-1.6a9.9 9.9 0 0 1 4.253-.901m-2.22 5.264c1.558-.055 1.92 1.034.882 1.843c-1.763 1.372-3.997 2.745-4.224 4.95c-.092.887.352 2.293.89 3.24c.04.07.061.153.058.24c-.01.231-.19.42-.428.409c-.162-.008-.311-.09-.45-.176c-.639-.395-1.238-.89-1.705-1.481a5 5 0 0 1-.665-1.116a4.6 4.6 0 0 1-.323-1.196a4.6 4.6 0 0 1 .011-1.238q.045-.315.128-.62c.673-2.49 3.377-4.564 5.498-4.828q.172-.021.328-.027"
+                  />
+                </svg>
+              </a>
+              <!-- tooltip -->
+              <div
+                id="tooltip-projects4-roboflow"
+                role="tooltip"
+                class="absolute z-10 invisible inline-block px-3 py-2 text-sm font-medium text-white transition-opacity duration-300 bg-gray-900 rounded-lg shadow-sm opacity-0 tooltip dark:bg-gray-700"
+              >
+                Roboflow
+                <div class="tooltip-arrow" data-popper-arrow></div>
+              </div>
+              <!-- yt -->
+              <a
+                data-tooltip-target="tooltip-projects4-youtube"
+                class="w-[40px] h-[40px] border-2 border-primary rounded-full flex justify-center items-center hover:bg-primary hover:shadow-spread group"
+                href="https://youtu.be/YYsXatSHidI"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <i class="fa-brands fa-youtube text-primary text-[17px] group-hover:text-white"></i>
+              </a>
+              <!-- tooltip -->
+              <div
+                id="tooltip-projects4-youtube"
+                role="tooltip"
+                class="absolute z-10 invisible inline-block px-3 py-2 text-sm font-medium text-white transition-opacity duration-300 bg-gray-900 rounded-lg shadow-sm opacity-0 tooltip dark:bg-gray-700"
+              >
+                Youtube
+                <div class="tooltip-arrow" data-popper-arrow></div>
+              </div>
+            </div>
+          </div>
+          <!-- Item 5 -->
+          <div class="max-w-72 bg-background border-[3px] border-primary rounded-lg">
+            <div class="max-w-52 w-full mx-auto my-4">
+              <img class="rounded-xl object-contain" src="./asset/projects/Kard-Ai.png" alt="corn" />
+            </div>
+            <div class="px-5 mb-3 h-[200px]">
+              <h5 class="text-white text-center mb-3 text-2xl md:text-xl font-extrabold tracking-tight">Kard AI</h5>
+              <p class="text-sm text-white text-justify">
+                KardAI is a web-based platform for predicting cardiovascular disease risk using a Random Forest model and educating users with a fine-tuned FLAN-T5 chatbot. It combines machine learning and health insights for early
+                detection and prevention.
+              </p>
+            </div>
+            <div class="px-5 pb-5 flex gap-2">
+              <!-- github -->
+              <a
+                data-tooltip-target="tooltip-projects5-github"
+                class="w-[40px] h-[40px] border-2 border-primary rounded-full flex justify-center items-center hover:bg-primary hover:shadow-spread group"
+                href="https://github.com/Yud1Pp/Kard-AI.git"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <i class="fa-brands fa-github text-primary text-[17px] group-hover:text-white"></i>
+              </a>
+              <!-- tooltip -->
+              <div
+                id="tooltip-projects5-github"
+                role="tooltip"
+                class="absolute z-10 invisible inline-block px-3 py-2 text-sm font-medium text-white transition-opacity duration-300 bg-gray-900 rounded-lg shadow-sm opacity-0 tooltip dark:bg-gray-700"
+              >
+                Github
+                <div class="tooltip-arrow" data-popper-arrow></div>
+              </div>
+              <!-- yt -->
+              <a
+                data-tooltip-target="tooltip-projects5-youtube"
+                class="w-[40px] h-[40px] border-2 border-primary rounded-full flex justify-center items-center hover:bg-primary hover:shadow-spread group"
+                href="https://youtu.be/a24COzsgW3A?si=rbBuV54ghA2IbWC0"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <i class="fa-brands fa-youtube text-primary text-[17px] group-hover:text-white"></i>
+              </a>
+              <!-- tooltip -->
+              <div
+                id="tooltip-projects5-youtube"
+                role="tooltip"
+                class="absolute z-10 invisible inline-block px-3 py-2 text-sm font-medium text-white transition-opacity duration-300 bg-gray-900 rounded-lg shadow-sm opacity-0 tooltip dark:bg-gray-700"
+              >
+                Youtube
+                <div class="tooltip-arrow" data-popper-arrow></div>
+              </div>
+            </div>
+          </div>
+          <!-- item 6 -->
+          <div class="max-w-72 bg-background border-[3px] border-primary rounded-lg">
+            <div class="max-w-52 w-full mx-auto my-4">
+              <img class="rounded-xl object-contain" src="./asset/projects/posture.png" alt="corn" />
+            </div>
+            <div class="px-5 mb-3 h-[200px]">
+              <h5 class="text-white text-center mb-3 text-2xl md:text-xl font-extrabold tracking-tight">Postura (In Progress)</h5>
+              <p class="text-sm text-white text-justify">
+                This project uses IoT (ESP32-CAM) and machine learning to detect posture errors. Mediapipe is used for pose estimation, with models for detecting good/bad posture and classifying lordosis, kyphosis, and normal, deployed on a
+                website with OpenCV.
+              </p>
+            </div>
+            <div class="px-5 pb-5 flex gap-2">
+              <!-- github -->
+              <a
+                data-tooltip-target="tooltip-projects6-github"
+                class="w-[40px] h-[40px] border-2 border-primary rounded-full flex justify-center items-center hover:bg-primary hover:shadow-spread group"
+                href="https://github.com/JustDz/Sistem-Pendeteksi-Postur-Duduk.git"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <i class="fa-brands fa-github text-primary text-[17px] group-hover:text-white"></i>
+              </a>
+              <!-- tooltip -->
+              <div
+                id="tooltip-projects6-github"
+                role="tooltip"
+                class="absolute z-10 invisible inline-block px-3 py-2 text-sm font-medium text-white transition-opacity duration-300 bg-gray-900 rounded-lg shadow-sm opacity-0 tooltip dark:bg-gray-700"
+              >
+                Github
+                <div class="tooltip-arrow" data-popper-arrow></div>
+              </div>
+              <!--  -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- akhir projects -->
+
+    <!-- certificate -->
+    <section id="certif" class="max-w-full py-16">
+      <h1 class="font-montserat mb-7 lg:text-5xl text-4xl px-5 font-extrabold tracking-wider text-white text-center drop-shadow-lg">
+        <span class="bg-gradient-to-r from-primary via-primary to-[#fff200] bg-clip-text text-transparent">Training</span> and
+        <span class="bg-gradient-to-r from-primary via-primary to-[#fff200] bg-clip-text text-transparent">Certifications</span>
+      </h1>
+      <div class="container mx-auto flex justify-center">
+        <div class="carousel box-border p-0 m-0">
+          <div class="swiper w-[400px]">
+            <div class="swiper-wrapper">
+              <!-- 0 -->
+              <div class="swiper-slide">
+                <div class="content">
+                  <div class="max-w-72 bg-background border-[3px] border-primary rounded-lg">
+                    <div class="max-w-52 w-full mx-auto my-4">
+                      <img class="object-cover rounded-xl shadow-spread" src="./asset/certifficate/pf-sains.png" alt="skillacademy" />
+                    </div>
+                    <h5 class="text-white px-5 text-center mb-3 text-2xl md:text-xl font-extrabold tracking-tight">Kompetisi Inovasi Energi PF Sains</h5>
+                    <div class="px-5 pb-5 flex gap-2">
+                      <a
+                        class="w-[150px] h-[40px] border-2 border-primary rounded-full flex justify-center gap-3 items-center hover:bg-primary hover:shadow-spread group"
+                        href="https://drive.google.com/file/d/1hg32k4vHumPcSA4AOVHh8-RKP6BaSCJm/view?usp=sharing"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        <i class="fa-solid fa-square-arrow-up-right text-primary text-[17px] group-hover:text-white"></i>
+                        <p class="text-white">View More</p>
+                      </a>
+                      <!--  -->
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- 1 -->
+              <div class="swiper-slide">
+                <div class="content">
+                  <div class="max-w-72 bg-background border-[3px] border-primary rounded-lg">
+                    <div class="max-w-52 w-full mx-auto my-4">
+                      <img class="object-cover rounded-xl shadow-spread" src="./asset/certifficate/skillacademy.png" alt="skillacademy" />
+                    </div>
+                    <h5 class="text-white px-5 text-center mb-3 text-2xl md:text-xl font-extrabold tracking-tight">Mastering AI Bootcamp Batch 4</h5>
+                    <div class="px-5 pb-5 flex gap-2">
+                      <a
+                        class="w-[150px] h-[40px] border-2 border-primary rounded-full flex justify-center gap-3 items-center hover:bg-primary hover:shadow-spread group"
+                        href="https://drive.google.com/drive/folders/1BQnep50EieVBC5Ad4W_gnWER-1C8kfgZ?usp=drive_link"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        <i class="fa-solid fa-square-arrow-up-right text-primary text-[17px] group-hover:text-white"></i>
+                        <p class="text-white">View More</p>
+                      </a>
+                      <!--  -->
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- 2 -->
+              <div class="swiper-slide">
+                <div class="content">
+                  <div class="max-w-72 bg-background border-[3px] border-primary rounded-lg">
+                    <div class="max-w-52 w-full mx-auto my-4">
+                      <img class="object-cover rounded-xl shadow-spread" src="./asset/certifficate/Machine Learning - Intermediate-151.jpg" alt="id camp" />
+                    </div>
+                    <h5 class="text-white px-5 text-center mb-3 text-2xl md:text-xl font-extrabold tracking-tight">ID Camp - Machine Learning Developer</h5>
+                    <div class="px-5 pb-5 flex gap-2">
+                      <a
+                        class="w-[150px] h-[40px] border-2 border-primary rounded-full flex justify-center gap-3 items-center hover:bg-primary hover:shadow-spread group"
+                        href="https://drive.google.com/file/d/14EBuCndEfA2TYT5uDy6bDH4-rIjX0hR0/edit"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        <i class="fa-solid fa-square-arrow-up-right text-primary text-[17px] group-hover:text-white"></i>
+                        <p class="text-white">View More</p>
+                      </a>
+                      <!--  -->
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- 3 -->
+              <div class="swiper-slide">
+                <div class="content">
+                  <div class="max-w-72 bg-background border-[3px] border-primary rounded-lg">
+                    <div class="max-w-52 w-full mx-auto my-4">
+                      <img class="object-cover rounded-xl shadow-spread" src="./asset/certifficate/SIC.png" alt="sic" />
+                    </div>
+                    <h5 class="text-white px-5 text-center mb-3 text-2xl md:text-xl font-extrabold tracking-tight">Samsung Innovation Campus</h5>
+                    <div class="px-5 pb-5 flex gap-2">
+                      <a
+                        class="w-[150px] h-[40px] border-2 border-primary rounded-full flex justify-center gap-3 items-center hover:bg-primary hover:shadow-spread group"
+                        href="https://drive.google.com/drive/folders/1mhMTJ4gvGzyVUxBId3K04FWnw_FpfPR4?usp=drive_link"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        <i class="fa-solid fa-square-arrow-up-right text-primary text-[17px] group-hover:text-white"></i>
+                        <p class="text-white">View More</p>
+                      </a>
+                      <!--  -->
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- 4 -->
+              <div class="swiper-slide">
+                <div class="content">
+                  <div class="max-w-72 bg-background border-[3px] border-primary rounded-lg">
+                    <div class="max-w-52 w-full mx-auto my-4">
+                      <img class="object-cover rounded-xl shadow-spread" src="./asset/certifficate/pengembangan ml.jpg" alt="corn" />
+                    </div>
+                    <h5 class="text-white px-5 text-center mb-3 text-2xl md:text-xl font-extrabold tracking-tight">Belajar Pengembangan Machine Learning</h5>
+                    <div class="px-5 pb-5 flex gap-2">
+                      <a
+                        class="w-[150px] h-[40px] border-2 border-primary rounded-full flex justify-center gap-3 items-center hover:bg-primary hover:shadow-spread group"
+                        href="https://www.dicoding.com/certificates/81P2VDLJ8POY"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        <i class="fa-solid fa-square-arrow-up-right text-primary text-[17px] group-hover:text-white"></i>
+                        <p class="text-white">View More</p>
+                      </a>
+                      <!--  -->
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- 5 -->
+              <div class="swiper-slide">
+                <div class="content">
+                  <div class="max-w-72 bg-background border-[3px] border-primary rounded-lg">
+                    <div class="max-w-52 w-full mx-auto my-4">
+                      <img class="object-cover rounded-xl shadow-spread" src="./asset/certifficate/ML Pemula.jpg" alt="corn" />
+                    </div>
+                    <h5 class="text-white px-5 text-center mb-3 text-2xl md:text-xl font-extrabold tracking-tight">Belajar Machine Learning Untuk Pemula</h5>
+                    <div class="px-5 pb-5 flex gap-2">
+                      <a
+                        class="w-[150px] h-[40px] border-2 border-primary rounded-full flex justify-center gap-3 items-center hover:bg-primary hover:shadow-spread group"
+                        href="https://www.dicoding.com/certificates/QLZ9RWWYMP5D"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        <i class="fa-solid fa-square-arrow-up-right text-primary text-[17px] group-hover:text-white"></i>
+                        <p class="text-white">View More</p>
+                      </a>
+                      <!--  -->
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- 6 -->
+              <div class="swiper-slide">
+                <div class="content">
+                  <div class="max-w-72 bg-background border-[3px] border-primary rounded-lg">
+                    <div class="max-w-52 w-full mx-auto my-4">
+                      <img class="object-cover rounded-xl shadow-spread" src="./asset/certifficate/visualisasi data.jpg" alt="corn" />
+                    </div>
+                    <h5 class="text-white px-5 text-center mb-3 text-2xl md:text-xl font-extrabold tracking-tight">Belajar Dasar Visualisasi Data</h5>
+                    <div class="px-5 pb-5 flex gap-2">
+                      <a
+                        class="w-[150px] h-[40px] border-2 border-primary rounded-full flex justify-center gap-3 items-center hover:bg-primary hover:shadow-spread group"
+                        href="https://www.dicoding.com/certificates/07Z682KQRXQR"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        <i class="fa-solid fa-square-arrow-up-right text-primary text-[17px] group-hover:text-white"></i>
+                        <p class="text-white">View More</p>
+                      </a>
+                      <!--  -->
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- 7 -->
+              <div class="swiper-slide">
+                <div class="content">
+                  <div class="max-w-72 bg-background border-[3px] border-primary rounded-lg">
+                    <div class="max-w-52 w-full mx-auto my-4">
+                      <img class="object-cover rounded-xl shadow-spread" src="./asset/certifficate/python.jpg" alt="corn" />
+                    </div>
+                    <h5 class="text-white px-5 text-center mb-3 text-2xl md:text-xl font-extrabold tracking-tight">Memulai Pemrograman dengan Python</h5>
+                    <div class="px-5 pb-5 flex gap-2">
+                      <a
+                        class="w-[150px] h-[40px] border-2 border-primary rounded-full flex justify-center gap-3 items-center hover:bg-primary hover:shadow-spread group"
+                        href="https://www.dicoding.com/certificates/L4PQ8OR9QZO1"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        <i class="fa-solid fa-square-arrow-up-right text-primary text-[17px] group-hover:text-white"></i>
+                        <p class="text-white">View More</p>
+                      </a>
+                      <!--  -->
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- 8 -->
+              <div class="swiper-slide">
+                <div class="content">
+                  <div class="max-w-72 bg-background border-[3px] border-primary rounded-lg">
+                    <div class="max-w-52 w-full mx-auto my-4">
+                      <img class="object-cover rounded-xl shadow-spread" src="./asset/certifficate/PM.jpg" alt="corn" />
+                    </div>
+                    <h5 class="text-white px-5 text-center mb-3 text-2xl md:text-xl font-extrabold tracking-tight">Belajar Dasar Manajemen Proyek</h5>
+                    <div class="px-5 pb-5 flex gap-2">
+                      <a
+                        class="w-[150px] h-[40px] border-2 border-primary rounded-full flex justify-center gap-3 items-center hover:bg-primary hover:shadow-spread group"
+                        href="https://www.dicoding.com/certificates/0LZ09Y08QZ65"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        <i class="fa-solid fa-square-arrow-up-right text-primary text-[17px] group-hover:text-white"></i>
+                        <p class="text-white">View More</p>
+                      </a>
+                      <!--  -->
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- 9 -->
+              <div class="swiper-slide">
+                <div class="content">
+                  <div class="max-w-72 bg-background border-[3px] border-primary rounded-lg">
+                    <div class="max-w-52 w-full mx-auto my-4">
+                      <img class="object-cover rounded-xl shadow-spread" src="./asset/certifficate/javascript.jpg" alt="corn" />
+                    </div>
+                    <h5 class="text-white px-5 text-center mb-3 text-2xl md:text-xl font-extrabold tracking-tight">Dasar Pemrograman Javascript</h5>
+                    <div class="px-5 pb-5 flex gap-2">
+                      <a
+                        class="w-[150px] h-[40px] border-2 border-primary rounded-full flex justify-center gap-3 items-center hover:bg-primary hover:shadow-spread group"
+                        href="https://www.dicoding.com/certificates/EYX46E1MWPDL"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        <i class="fa-solid fa-square-arrow-up-right text-primary text-[17px] group-hover:text-white"></i>
+                        <p class="text-white">View More</p>
+                      </a>
+                      <!--  -->
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- 10 -->
+              <div class="swiper-slide">
+                <div class="content">
+                  <div class="max-w-72 bg-background border-[3px] border-primary rounded-lg">
+                    <div class="max-w-52 w-full mx-auto my-4">
+                      <img class="object-cover rounded-xl shadow-spread" src="./asset/certifficate/Pahlawan Muda Digital untuk UMKM Indonesia.jpg" alt="corn" />
+                    </div>
+                    <h5 class="text-white px-5 text-center mb-3 text-2xl md:text-xl font-extrabold tracking-tight">Pahlawan Muda Digital untuk UMKM Indonesia</h5>
+                    <div class="px-5 pb-5 flex gap-2">
+                      <a
+                        class="w-[150px] h-[40px] border-2 border-primary rounded-full flex justify-center gap-3 items-center hover:bg-primary hover:shadow-spread group"
+                        href="https://drive.google.com/file/d/1v5ncnt-dTw7U0jvN1t8dX0SSk_76WkWM/view?usp=drive_link"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        <i class="fa-solid fa-square-arrow-up-right text-primary text-[17px] group-hover:text-white"></i>
+                        <p class="text-white">View More</p>
+                      </a>
+                      <!--  -->
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- control -->
+          <div id="custom-control" class="control">
+            <button class="prev"><i class="fa-solid fa-caret-left fa-xl"></i></button>
+            <button class="next"><i class="fa-solid fa-caret-right fa-xl"></i></button>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- akhir certificate -->
+
+    <!-- contact -->
+     <section class="max-w-full py-36">
+        <div class="container flex flex-wrap justify-center">
+
+        </div>
+     </section>
+    <!-- akhir contact -->
 
     <script src="./node_modules/flowbite/dist/flowbite.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="app.js"></script>
   </body>
 </html>

@@ -1,3 +1,39 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.carousel img {
+  @apply w-full pointer-events-none select-none;
+}
+
+.carousel h1 {
+  @apply text-white;
+}
+
+.carousel {
+  @apply flex flex-col justify-center items-center w-[90%];
+}
+
+.swiper {
+  @apply w-full h-full;
+}
+
+.swiper-slide {
+  @apply max-w-full mt-[20px] mb-[40px] flex justify-center rounded-xl overflow-hidden;
+}
+
+.content {
+  @apply flex justify-center;
+}
+
+.control {
+  @apply flex relative gap-[14px];
+}
+
+.control button {
+  @apply text-white rounded-full w-[30px] h-[30px] bg-primary hover:shadow-spread hover:scale-105 transition-all;
+}
+
+.swiper {
+  @apply w-full;
+}
