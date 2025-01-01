@@ -2,9 +2,53 @@
 @tailwind components;
 @tailwind utilities;
 
-.carousel img {
-  @apply w-full pointer-events-none select-none;
+/* bintang staitic */
+/* body {
+  margin: 0;
+  height: 100vh;
+  background: black;
+  background-image: radial-gradient(white 1px, transparent 1px), radial-gradient(white 1px, transparent 1px);
+  background-size: 50px 50px, 25px 25px;
+} */
+/* akhir bintang static */
+
+.cursor {
+  display: inline-block;
+  background-color: #fff; /* Sesuaikan dengan warna teks */
+  animation: blink 0.8s step-end infinite;
 }
+
+/* Animasi untuk kursor berkedip */
+@keyframes blink {
+  50% {
+    opacity: 0;
+  }
+}
+
+/* kotak kota */
+body {
+  margin: 0;
+  background-image: linear-gradient(90deg, rgba(255, 255, 255, 0.1) 1px, transparent 1px), linear-gradient(rgba(255, 255, 255, 0.1) 1px, transparent 1px);
+  background-size: 20px 20px;
+}
+/* akhir kotak kotak */
+
+/* efek salju */
+/* body {
+  margin: 0;
+  position: relative;
+}
+
+#starfield {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -999;
+  will-change: transform;
+} */
+/* akhir efek salju */
 
 .carousel h1 {
   @apply text-white;
@@ -19,7 +63,7 @@
 }
 
 .swiper-slide {
-  @apply max-w-full mt-[20px] mb-[40px] flex justify-center rounded-xl overflow-hidden;
+  @apply max-w-full mt-[20px] mb-[40px] flex justify-center gap-[20px] rounded-xl overflow-hidden;
 }
 
 .content {
